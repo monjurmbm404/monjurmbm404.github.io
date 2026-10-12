@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engr. Md Monjur Bakth Mazumder | Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#070a12',
+                            card: '#0c101d',
+                            border: '#1e293b',
+                            accent: '#6366f1',
+                            cyan: '#06b6d4',
+                            emerald: '#10b981'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar & glassmorphism utilities */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #070a12;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #334155;
+        }
+        .glass-card {
+            background: rgba(12, 16, 29, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-indigo {
+            box-shadow: 0 0 25px -5px rgba(99, 102, 241, 0.3);
+        }
+        .glow-cyan {
+            box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-[#070a12] text-slate-100 font-sans antialiased selection:bg-indigo-500 selection:text-white relative overflow-x-hidden">
+
+    <!-- Ambient Glowing Background Lights -->
+    <div class="fixed top-0 left-1/3 -translate-x-1/2 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[140px] pointer-events-none z-0"></div>
+    <div class="fixed bottom-1/4 right-10 w-[500px] h-[500px] bg-cyan-600/10 rounded-full blur-[130px] pointer-events-none z-0"></div>
+
+    <!-- HEADER & NAVBAR -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 bg-[#070a12]/80 backdrop-blur-xl border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            <!-- Logo / Identity -->
+            <a href="#home" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-500 via-cyan-400 to-emerald-400 p-[2px] shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform">
+                    <div class="w-full h-full bg-[#070a12] rounded-[10px] flex items-center justify-center font-bold text-indigo-400 font-mono text-sm">
+                        MBM
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-bold text-slate-100 text-sm sm:text-base tracking-tight group-hover:text-indigo-400 transition-colors">
+                        Engr. Md Monjur Bakth
+                    </span>
+                    <span class="text-[10px] text-cyan-400 font-mono tracking-wider -mt-0.5 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                        FULL STACK | CP | AI/ML
+                    </span>
+                </div>
+            </a>
+
+            <!-- Desktop Links -->
+            <nav class="hidden xl:flex items-center gap-5 text-xs font-mono tracking-wider uppercase">
+                <a href="#about" class="text-slate-300 hover:text-indigo-400 transition-colors">About</a>
+                <a href="#education" class="text-slate-300 hover:text-indigo-400 transition-colors">Education</a>
+                <a href="#languages" class="text-slate-300 hover:text-indigo-400 transition-colors">Languages</a>
+                <a href="#skills" class="text-slate-300 hover:text-indigo-400 transition-colors">Skills</a>
+                <a href="#experience" class="text-slate-300 hover:text-indigo-400 transition-colors">Experience</a>
+                <a href="#repos" class="text-slate-300 hover:text-indigo-400 transition-colors">Repos</a>
+                <a href="#cp" class="text-slate-300 hover:text-indigo-400 transition-colors">CP</a>
+                <a href="#aiml" class="text-slate-300 hover:text-indigo-400 transition-colors">AI/ML</a>
+                <a href="#contact" class="text-slate-300 hover:text-indigo-400 transition-colors">Contact</a>
+            </nav>
+
+            <!-- Right Action Button & Mobile Toggle -->
+            <div class="flex items-center gap-3">
+                <a href="#contact" class="hidden sm:flex px-4 py-2 rounded-xl bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-500 text-white text-xs font-semibold shadow-lg shadow-indigo-600/25 hover:shadow-indigo-600/40 hover:scale-[1.02] transition-all items-center gap-1.5">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span>Contact Me</span>
+                </a>
+
+                <button id="menu-btn" class="xl:hidden p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white" aria-label="Toggle Navigation">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden xl:hidden bg-[#070a12]/95 border-b border-slate-800 px-6 py-6 space-y-3 backdrop-blur-2xl">
+            <a href="#about" class="mobile-link block text-slate-300 hover:text-indigo-400 py-1 font-mono text-sm">About</a>
+            <a href="#education" class="mobile-link block text-slate-300 hover:text-indigo-400 py-1 font-mono text-sm">Education</a>
+            <a href="#languages" class="mobile-link block text-slate-300 hover:text-indigo-400 py-1 font-mono text-sm">Languages</a>
+            <a href="#skills" class="mobile-link block text-slate-300 hover:text-indigo-400 py-1 font-mono text-sm">Skills</a>
+            <a href="#experience" class="mobile-link block text-slate-300 hover:text-indigo-400 py-1 font-mono text-sm">Experience</a>
+            <a href="#repos" class="mobile-link block text-slate-300 hover:text-indigo-400 py-1 font-mono text-sm">Repositories</a>
+            <a href="#cp" class="mobile-link block text-slate-300 hover:text-indigo-400 py-1 font-mono text-sm">Competitive Programming</a>
+            <a href="#aiml" class="mobile-link block text-slate-300 hover:text-indigo-400 py-1 font-mono text-sm">AI/ML</a>
+            <a href="#contact" class="mobile-link block text-slate-300 hover:text-indigo-400 py-1 font-mono text-sm">Contact</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="pt-32 pb-20 md:pt-42 md:pb-32 px-4 sm:px-6 lg:px-8 relative z-10 overflow-hidden">
+        <!-- Background Ambient Glow Effects -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                
+                <!-- Left Details -->
+                <div class="lg:col-span-7 space-y-8">
+                    <!-- Status & Identity Badge -->
+                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-slate-900/90 border border-indigo-500/30 text-xs font-mono backdrop-blur-md shadow-lg shadow-indigo-500/10">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+                        <span class="text-indigo-300 font-medium">Full Stack | CP | AI/ML Learner</span>
+                        <span class="text-slate-600">|</span>
+                        <span class="text-slate-300 font-bangla">ইঞ্জিনিয়ার মো. মনজুর বক্ত মজুমদার</span>
+                    </div>
+
+                    <!-- Main Headline -->
+                    <div class="space-y-4">
+                        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-[1.1]">
+                            Engr. Md Monjur <br>
+                            <span class="bg-gradient-to-r from-indigo-400 via-cyan-300 to-emerald-400 bg-clip-text text-transparent">
+                                Bakth Mazumder
+                            </span>
+                        </h1>
+                        <div class="h-9 flex items-center font-mono text-cyan-300 text-base sm:text-xl font-semibold">
+                            <span class="text-indigo-400 mr-2">&gt;</span><span id="typed-text"></span><span class="w-2.5 h-5 bg-indigo-400 ml-1.5 animate-pulse rounded-sm"></span>
+                        </div>
+                    </div>
+
+                    <!-- Bio Description -->
+                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl font-normal">
+                        Passionate Full Stack Developer, Competitive Programmer, and AI/ML Learner. Dedicated to building scalable user-centered web applications, solving complex algorithmic challenges, and studying intelligent systems.
+                    </p>
+
+                    <!-- Multi-Profile Impact & Achievement Metrics -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3.5 pt-2">
+                        <div class="p-4 rounded-2xl bg-[#0c101d]/80 border border-slate-800/80 backdrop-blur-sm text-center hover:border-indigo-500/40 transition-all group">
+                            <div class="text-2xl sm:text-3xl font-black text-indigo-400 font-mono group-hover:scale-105 transition-transform">102+</div>
+                            <div class="text-[11px] text-slate-400 font-mono mt-1 uppercase tracking-wider">Repositories</div>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-[#0c101d]/80 border border-slate-800/80 backdrop-blur-sm text-center hover:border-cyan-500/40 transition-all group">
+                            <div class="text-2xl sm:text-3xl font-black text-cyan-400 font-mono group-hover:scale-105 transition-transform">637+</div>
+                            <div class="text-[11px] text-slate-400 font-mono mt-1 uppercase tracking-wider">Contributions</div>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-[#0c101d]/80 border border-slate-800/80 backdrop-blur-sm text-center hover:border-emerald-500/40 transition-all group">
+                            <div class="text-2xl sm:text-3xl font-black text-emerald-400 font-mono group-hover:scale-105 transition-transform">500+</div>
+                            <div class="text-[11px] text-slate-400 font-mono mt-1 uppercase tracking-wider">CP Solved</div>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-[#0c101d]/80 border border-slate-800/80 backdrop-blur-sm text-center hover:border-amber-500/40 transition-all group">
+                            <div class="text-2xl sm:text-3xl font-black text-amber-400 font-mono group-hover:scale-105 transition-transform">3+</div>
+                            <div class="text-[11px] text-slate-400 font-mono mt-1 uppercase tracking-wider">Exp. Years</div>
+                        </div>
+                    </div>
+
+                    <!-- Call To Action Buttons -->
+                    <div class="flex flex-wrap items-center gap-4 pt-3">
+                        <a href="https://github.com/monjurmbm404" target="_blank" rel="noopener noreferrer" class="px-7 py-4 rounded-xl bg-slate-900 border border-slate-700/80 text-slate-200 font-semibold text-xs font-mono hover:bg-slate-800 hover:border-indigo-500/50 transition-all flex items-center gap-2.5 shadow-lg">
+                            <i class="fa-brands fa-github text-cyan-400 text-base"></i>
+                            <span>Explore GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/monjurmbm404/" target="_blank" rel="noopener noreferrer" class="px-7 py-4 rounded-xl bg-slate-900 border border-slate-700/80 text-slate-200 font-semibold text-xs font-mono hover:bg-slate-800 hover:border-blue-500/50 transition-all flex items-center gap-2.5 shadow-lg">
+                            <i class="fa-brands fa-linkedin text-blue-400 text-base"></i>
+                            <span>LinkedIn Profile</span>
+                        </a>
+                        <a href="#contact" class="px-7 py-4 rounded-xl bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-500 text-white text-xs font-semibold shadow-xl shadow-indigo-600/30 hover:shadow-indigo-600/50 hover:scale-[1.02] transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>Let's Connect</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Terminal Showcase Card -->
+                <div class="lg:col-span-5">
+                    <div class="relative w-full max-w-md mx-auto">
+                        <!-- Glowing Border Effect -->
+                        <div class="absolute -inset-2 bg-gradient-to-r from-indigo-500 via-cyan-400 to-emerald-400 rounded-3xl blur-2xl opacity-25 animate-pulse"></div>
+                        
+                        <div class="relative bg-[#0c101d] border border-slate-800 p-6 rounded-3xl shadow-2xl space-y-5">
+                            <!-- Terminal Top Header -->
+                            <div class="flex items-center justify-between pb-4 border-b border-slate-800/80">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-rose-500/80"></span>
+                                    <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+                                    <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+                                    <span class="ml-2 font-mono text-xs text-slate-400 font-medium">monjurmbm404.ts</span>
+                                </div>
+                                <span class="text-[10px] font-mono px-2.5 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 font-semibold">Active Profile</span>
+                            </div>
+
+                            <!-- Terminal Code Block -->
+                            <div class="bg-[#05070f] p-4 rounded-2xl border border-slate-800/80 font-mono text-xs space-y-2 text-slate-300 shadow-inner">
+                                <div><span class="text-purple-400 font-bold">const</span> <span class="text-yellow-300">developer</span> = &#123;</div>
+                                <div class="pl-4"><span class="text-cyan-300">handle</span>: <span class="text-emerald-300">'monjurmbm404'</span>,</div>
+                                <div class="pl-4"><span class="text-cyan-300">degree</span>: <span class="text-emerald-300">'BSc in CSE (SIU)'</span>,</div>
+                                <div class="pl-4"><span class="text-cyan-300">location</span>: <span class="text-emerald-300">'Moulvibazar, Bangladesh'</span>,</div>
+                                <div class="pl-4"><span class="text-cyan-300">coreFocus</span>: [<span class="text-amber-300">'React'</span>, <span class="text-amber-300">'Next.js'</span>, <span class="text-amber-300">'C++'</span>, <span class="text-amber-300">'AI/ML'</span>],</div>
+                                <div class="pl-4"><span class="text-cyan-300">status</span>: <span class="text-emerald-300">'Building & Solving Daily'</span></div>
+                                <div>&#125;;</div>
+                            </div>
+
+                            <!-- Academic & CP Profiles Box -->
+                            <div class="space-y-2.5">
+                                <div class="flex items-center justify-between p-3.5 rounded-2xl bg-slate-950/80 border border-slate-800/80 text-xs font-mono hover:border-slate-700 transition-colors">
+                                    <span class="text-slate-300 flex items-center gap-2">
+                                        <i class="fa-solid fa-code text-cyan-400 text-sm"></i>
+                                        Codeforces & LeetCode
+                                    </span>
+                                    <span class="text-cyan-400 font-semibold">Active Solver</span>
+                                </div>
+                                <div class="flex items-center justify-between p-3.5 rounded-2xl bg-slate-950/80 border border-slate-800/80 text-xs font-mono hover:border-slate-700 transition-colors">
+                                    <span class="text-slate-300 flex items-center gap-2">
+                                        <i class="fa-solid fa-graduation-cap text-indigo-400 text-sm"></i>
+                                        Sylhet International University
+                                    </span>
+                                    <span class="text-emerald-400 font-semibold">2025 - Present</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT ME SECTION -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/40 border-y border-slate-800/80">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <h2 class="text-xs font-mono text-indigo-400 uppercase tracking-widest">Get to Know Me</h2>
+                <p class="text-2xl sm:text-4xl font-extrabold text-white">About Me</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-indigo-500 to-cyan-400 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="bg-[#0c101d] border border-slate-800 p-8 sm:p-10 rounded-3xl shadow-xl space-y-6">
+                <div class="flex items-center gap-4">
+                    <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white">Engr. Md Monjur Bakth Mazumder</h3>
+                        <p class="text-xs sm:text-sm text-cyan-400 font-mono mt-0.5">Frontend-Focused Full Stack Developer | Competitive Programmer | AI/ML Learner</p>
+                    </div>
+                </div>
+
+                <div class="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+                    <p>
+                        I am a passionate <strong>Full Stack Developer</strong> and CSE student at Sylhet International University (SIU) with a background as Lead Frontend Developer. I specialize in building modern, performant, and user-centered web applications through clean architecture, scalable code, and effective team leadership.
+                    </p>
+                    <p>
+                        Alongside full-stack web engineering, I regularly sharpen my problem-solving abilities in C++ and JavaScript—focusing on advanced data structures, dynamic programming, and mathematical optimization for competitive programming.
+                    </p>
+                    <p>
+                        As an enthusiastic <strong>AI/ML Learner</strong>, I am actively exploring intelligent systems, machine learning pipelines, deep learning models, and generative AI integrations using Python and the Google Gemini API.
+                    </p>
+                </div>
+
+                <!-- Key Quick Info Grid -->
+                <div class="pt-6 border-t border-slate-800 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xs font-mono">
+                    <div class="p-4 rounded-2xl bg-slate-950 border border-slate-800/80">
+                        <span class="text-slate-500 block mb-1">LOCATION</span>
+                        <span class="text-slate-200 font-medium text-sm">Moulvibazar, Sylhet, Bangladesh</span>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-950 border border-slate-800/80">
+                        <span class="text-slate-500 block mb-1">DIRECT EMAIL</span>
+                        <a href="mailto:monjurmbm404@gmail.com" class="text-indigo-400 hover:text-indigo-300 font-medium text-sm transition-colors">monjurmbm404@gmail.com</a>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-950 border border-slate-800/80 sm:col-span-2 lg:col-span-1">
+                        <span class="text-slate-500 block mb-1">AVAILABILITY</span>
+                        <span class="text-emerald-400 font-medium text-sm flex items-center gap-1.5">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                            Open for Remote / Roles
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section id="education" class="py-20 px-4 sm:px-6 lg:px-8 relative">
+        <div class="max-w-5xl mx-auto space-y-12">
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <h2 class="text-xs font-mono text-cyan-400 uppercase tracking-widest">Academic Credentials</h2>
+                <p class="text-2xl sm:text-4xl font-extrabold text-white">Education Timeline</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-indigo-500 to-cyan-400 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="space-y-6">
+                <!-- BSc in CSE -->
+                <div class="bg-[#0c101d] border border-slate-800 p-6 sm:p-8 rounded-3xl shadow-xl hover:border-indigo-500/40 transition-all space-y-4">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div class="flex items-center gap-4">
+                            <div class="p-3.5 rounded-2xl bg-indigo-500/10 text-indigo-400">
+                                <i class="fa-solid fa-graduation-cap text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg sm:text-xl font-bold text-white">BSc in Computer Science & Engineering (CSE)</h3>
+                                <a href="https://siu.edu.bd/" target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-400 hover:text-indigo-300 font-mono inline-flex items-center gap-1.5 transition-colors">
+                                    <span>Sylhet International University (SIU)</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <span class="self-start sm:self-center text-xs font-mono px-3.5 py-1.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                            2025 – Present
+                        </span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-400 pl-0 sm:pl-16">
+                        Strengthening computer science fundamentals, algorithm analysis, mathematical foundations, and advanced computing paradigms.
+                    </p>
+                </div>
+
+                <!-- Diploma in CST -->
+                <div class="bg-[#0c101d] border border-slate-800 p-6 sm:p-8 rounded-3xl shadow-xl hover:border-cyan-500/40 transition-all space-y-4">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div class="flex items-center gap-4">
+                            <div class="p-3.5 rounded-2xl bg-cyan-500/10 text-cyan-400">
+                                <i class="fa-solid fa-award text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg sm:text-xl font-bold text-white">Diploma in Computer Science & Technology (CST)</h3>
+                                <a href="https://mpi.moulvibazar.gov.bd/" target="_blank" rel="noopener noreferrer" class="text-sm text-cyan-400 hover:text-cyan-300 font-mono inline-flex items-center gap-1.5 transition-colors">
+                                    <span>Moulvibazar Polytechnic Institute (MPI)</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <span class="self-start sm:self-center text-xs font-mono px-3.5 py-1.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                            2020 – 2024
+                        </span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-400 pl-0 sm:pl-16">
+                        Completed four-year technical degree covering software development, web engineering, database architecture, and object-oriented programming.
+                    </p>
+                </div>
+
+                <!-- Secondary School Certificate -->
+                <div class="bg-[#0c101d] border border-slate-800 p-6 sm:p-8 rounded-3xl shadow-xl hover:border-amber-500/40 transition-all space-y-4">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div class="flex items-center gap-4">
+                            <div class="p-3.5 rounded-2xl bg-amber-500/10 text-amber-400">
+                                <i class="fa-solid fa-school text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg sm:text-xl font-bold text-white">Secondary School Certificate (SSC)</h3>
+                                <a href="https://www.shahhelalhs.edu.bd" target="_blank" rel="noopener noreferrer" class="text-sm text-amber-400 hover:text-amber-300 font-mono inline-flex items-center gap-1.5 transition-colors">
+                                    <span>Shah Helal High School – Hilalpur, Moulvibazar</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <span class="self-start sm:self-center text-xs font-mono px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                            2018 – 2020
+                        </span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-400 pl-0 sm:pl-16">
+                        Completed secondary education with a strong foundational focus on science, mathematics, and core academic principles.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LANGUAGE PROFICIENCY SECTION -->
+    <section id="languages" class="py-20 px-4 sm:px-6 lg:px-8 relative">
+        <div class="max-w-4xl mx-auto space-y-10">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <h2 class="text-xs font-mono text-cyan-400 uppercase tracking-widest">Communication Skills</h2>
+                <p class="text-2xl sm:text-4xl font-extrabold text-white">Language Proficiency</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-indigo-500 to-cyan-400 mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Language Table Card -->
+            <div class="bg-[#0c101d] border border-slate-800 rounded-3xl shadow-xl overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="border-b border-slate-800 bg-slate-950/60 font-mono text-xs text-slate-400 uppercase tracking-wider">
+                                <th class="py-4 px-6">Language</th>
+                                <th class="py-4 px-6 text-center">Reading</th>
+                                <th class="py-4 px-6 text-center">Writing</th>
+                                <th class="py-4 px-6 text-center">Speaking</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800/80 text-sm">
+                            <!-- English -->
+                            <tr class="hover:bg-slate-900/40 transition-colors">
+                                <td class="py-4 px-6 font-bold text-white flex items-center gap-3">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
+                                    English
+                                </td>
+                                <td class="py-4 px-6 text-center font-mono text-xs text-indigo-300">
+                                    <span class="px-2.5 py-1 rounded-lg bg-indigo-500/10 border border-indigo-500/20">Moderate</span>
+                                </td>
+                                <td class="py-4 px-6 text-center font-mono text-xs text-indigo-300">
+                                    <span class="px-2.5 py-1 rounded-lg bg-indigo-500/10 border border-indigo-500/20">Moderate</span>
+                                </td>
+                                <td class="py-4 px-6 text-center font-mono text-xs text-indigo-300">
+                                    <span class="px-2.5 py-1 rounded-lg bg-indigo-500/10 border border-indigo-500/20">Moderate</span>
+                                </td>
+                            </tr>
+                            <!-- Bengali -->
+                            <tr class="hover:bg-slate-900/40 transition-colors">
+                                <td class="py-4 px-6 font-bold text-white flex items-center gap-3">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span>
+                                    Bengali
+                                </td>
+                                <td class="py-4 px-6 text-center font-mono text-xs text-emerald-300">
+                                    <span class="px-2.5 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20">High</span>
+                                </td>
+                                <td class="py-4 px-6 text-center font-mono text-xs text-emerald-300">
+                                    <span class="px-2.5 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20">High</span>
+                                </td>
+                                <td class="py-4 px-6 text-center font-mono text-xs text-emerald-300">
+                                    <span class="px-2.5 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20">High</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECH STACK & SKILLS SECTION -->
+    <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 relative">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <h2 class="text-xs font-mono text-cyan-400 uppercase tracking-widest">Technologies & Tools</h2>
+                <p class="text-2xl sm:text-4xl font-extrabold text-white">Technical Skill Set</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-indigo-500 to-cyan-400 mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Skills Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- 1. Languages -->
+                <div class="bg-[#0c101d] border border-slate-800 p-6 rounded-3xl space-y-4 hover:border-indigo-500/50 transition-all duration-300">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2.5 rounded-xl bg-indigo-500/10 text-indigo-400">
+                            <i class="fa-solid fa-code text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-lg">Languages</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-amber-300">JavaScript</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-blue-300">TypeScript</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-slate-200">C</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-indigo-300">C++</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-orange-300">Java</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-emerald-300">Python</span>
+                    </div>
+                </div>
+
+                <!-- 2. Frontend -->
+                <div class="bg-[#0c101d] border border-slate-800 p-6 rounded-3xl space-y-4 hover:border-cyan-500/50 transition-all duration-300">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2.5 rounded-xl bg-cyan-500/10 text-cyan-400">
+                            <i class="fa-solid fa-layer-group text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-lg">Frontend</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-cyan-300">React.js</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-white">Next.js</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-sky-300">Tailwind CSS</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-orange-400">HTML</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-blue-400">CSS</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-purple-300">Shadcn UI</span>
+                    </div>
+                </div>
+
+                <!-- 3. Backend -->
+                <div class="bg-[#0c101d] border border-slate-800 p-6 rounded-3xl space-y-4 hover:border-emerald-500/50 transition-all duration-300">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-400">
+                            <i class="fa-solid fa-server text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-lg">Backend</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-emerald-300">Node.js</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-slate-300">Express.js</span>
+                    </div>
+                </div>
+
+                <!-- 4. State Management -->
+                <div class="bg-[#0c101d] border border-slate-800 p-6 rounded-3xl space-y-4 hover:border-purple-500/50 transition-all duration-300">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2.5 rounded-xl bg-purple-500/10 text-purple-400">
+                            <i class="fa-solid fa-diagram-project text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-lg">State Management</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-purple-300">Redux Toolkit</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-indigo-300">RTK Query</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-pink-300">Context API</span>
+                    </div>
+                </div>
+
+                <!-- 5. Databases -->
+                <div class="bg-[#0c101d] border border-slate-800 p-6 rounded-3xl space-y-4 hover:border-emerald-500/50 transition-all duration-300">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-400">
+                            <i class="fa-solid fa-database text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-lg">Databases</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-emerald-400">MongoDB</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-amber-300">MySQL</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-blue-300">PostgreSQL</span>
+                    </div>
+                </div>
+
+                <!-- 6. Authentication -->
+                <div class="bg-[#0c101d] border border-slate-800 p-6 rounded-3xl space-y-4 hover:border-rose-500/50 transition-all duration-300">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2.5 rounded-xl bg-rose-500/10 text-rose-400">
+                            <i class="fa-solid fa-shield-halved text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-lg">Authentication</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-orange-300">Firebase</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-sky-300">Passport.js</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-purple-300">Clerk</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-rose-300">Custom Auth</span>
+                    </div>
+                </div>
+
+                <!-- 7. Version Control & Tools -->
+                <div class="bg-[#0c101d] border border-slate-800 p-6 rounded-3xl space-y-4 hover:border-blue-500/50 transition-all duration-300">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2.5 rounded-xl bg-blue-500/10 text-blue-400">
+                            <i class="fa-solid fa-toolbox text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-lg">Version Control & Tools</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-slate-200">Git</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-white">GitHub</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-blue-400">VS Code</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-orange-400">Postman</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-slate-100">Vercel</span>
+                    </div>
+                </div>
+
+                <!-- 8. Soft Skills -->
+                <div class="bg-[#0c101d] border border-slate-800 p-6 rounded-3xl space-y-4 lg:col-span-2 hover:border-amber-500/50 transition-all duration-300">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2.5 rounded-xl bg-amber-500/10 text-amber-400">
+                            <i class="fa-solid fa-user-group text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-lg">Soft Skills</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-amber-300">Teamwork</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-emerald-300">Problem-Solving</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-cyan-300">Time Management</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-indigo-300">Communication</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- EMPLOYMENT HISTORY SECTION -->
+    <section id="experience" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/40 border-y border-slate-800/80">
+        <div class="max-w-5xl mx-auto space-y-12">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <h2 class="text-xs font-mono text-indigo-400 uppercase tracking-widest">Professional Journey</h2>
+                <p class="text-2xl sm:text-4xl font-extrabold text-white">Employment History</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-indigo-500 to-cyan-400 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="space-y-6">
+                <!-- 1. Qrinux Inc. -->
+                <div class="bg-[#0c101d] border border-slate-800 p-6 sm:p-8 rounded-3xl shadow-xl hover:border-indigo-500/40 transition-all space-y-4">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div class="flex items-center gap-4">
+                            <div class="p-3.5 rounded-2xl bg-indigo-500/10 text-indigo-400">
+                                <i class="fa-solid fa-briefcase text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg sm:text-xl font-bold text-white">Software Engineer & Lead Frontend Developer</h3>
+                                <div class="flex items-center gap-2 mt-0.5">
+                                    <a href="https://qrinux.com" target="_blank" rel="noopener noreferrer" class="text-sm text-indigo-400 hover:text-indigo-300 font-mono inline-flex items-center gap-1.5 transition-colors">
+                                        <span>Qrinux Inc., Toronto, Canada</span>
+                                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="self-start sm:self-center text-xs font-mono px-3.5 py-1.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                            October 2024 – April 2026
+                        </span>
+                    </div>
+                    <ul class="space-y-2 text-xs sm:text-sm text-slate-300 pl-0 sm:pl-16 list-disc list-inside">
+                        <li>Led the design and development of responsive web applications.</li>
+                        <li>Maintained accurate project documentation and ensured timely delivery.</li>
+                        <li>Collaborated with cross-functional teams to enhance efficiency and professionalism.</li>
+                        <li>Mentored junior developers and promoted structured, efficient workflows.</li>
+                    </ul>
+                </div>
+
+                <!-- 2. Boom Box E-Solutions -->
+                <div class="bg-[#0c101d] border border-slate-800 p-6 sm:p-8 rounded-3xl shadow-xl hover:border-cyan-500/40 transition-all space-y-4">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div class="flex items-center gap-4">
+                            <div class="p-3.5 rounded-2xl bg-cyan-500/10 text-cyan-400">
+                                <i class="fa-solid fa-laptop-code text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg sm:text-xl font-bold text-white">Software Engineer & Lead Frontend Developer</h3>
+                                <div class="flex items-center gap-2 mt-0.5">
+                                    <a href="https://boomboxesolutions.com" target="_blank" rel="noopener noreferrer" class="text-sm text-cyan-400 hover:text-cyan-300 font-mono inline-flex items-center gap-1.5 transition-colors">
+                                        <span>Boom Box E-Solutions, Sylhet, Bangladesh</span>
+                                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="self-start sm:self-center text-xs font-mono px-3.5 py-1.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                            October 2025 – April 2026
+                        </span>
+                    </div>
+                    <ul class="space-y-2 text-xs sm:text-sm text-slate-300 pl-0 sm:pl-16 list-disc list-inside">
+                        <li>Led the design and development of responsive web applications.</li>
+                        <li>Maintained accurate project documentation and ensured timely project delivery.</li>
+                        <li>Collaborated with cross-functional teams to improve efficiency and maintain professional standards.</li>
+                        <li>Mentored junior developers and promoted structured, efficient development workflows.</li>
+                    </ul>
+                </div>
+
+                <!-- 3. Velocity Digital Inc. -->
+                <div class="bg-[#0c101d] border border-slate-800 p-6 sm:p-8 rounded-3xl shadow-xl hover:border-amber-500/40 transition-all space-y-4">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div class="flex items-center gap-4">
+                            <div class="p-3.5 rounded-2xl bg-amber-500/10 text-amber-400">
+                                <i class="fa-solid fa-code text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg sm:text-xl font-bold text-white">Web Developer</h3>
+                                <p class="text-sm text-amber-400 font-mono mt-0.5">Velocity Digital Inc., British Columbia, Canada</p>
+                            </div>
+                        </div>
+                        <span class="self-start sm:self-center text-xs font-mono px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                            May 2025 – August 2025
+                        </span>
+                    </div>
+                    <ul class="space-y-2 text-xs sm:text-sm text-slate-300 pl-0 sm:pl-16 list-disc list-inside">
+                        <li>Developed and maintained responsive websites according to client requirements.</li>
+                        <li>Ensured accuracy and reliability in content and system management.</li>
+                        <li>Collaborated with team members to deliver high-quality projects on time.</li>
+                        <li>Focused on attention to detail, problem-solving, and organizational responsibilities.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PINNED REPOSITORIES & PROJECTS SECTION -->
+    <section id="repos" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/40 border-y border-slate-800/80">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <h2 class="text-xs font-mono text-indigo-400 uppercase tracking-widest">GitHub Pinned Code</h2>
+                <p class="text-2xl sm:text-4xl font-extrabold text-white">Featured Repositories & Projects</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-indigo-500 to-cyan-400 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Repo 1 -->
+                <div class="bg-[#0c101d] border border-slate-800 p-6 rounded-3xl shadow-xl flex flex-col justify-between hover:border-indigo-500/50 transition-all">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between text-xs font-mono text-slate-400">
+                            <span class="flex items-center gap-1.5 text-indigo-400"><i class="fa-solid fa-box-archive"></i> Public Repo</span>
+                            <span class="text-amber-400"><i class="fa-solid fa-star"></i> Pinned</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white hover:text-indigo-300">Python-Data-Science-Tools</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Comprehensive Python data science utilities, data processing scripts, Pandas/NumPy tools, and ML visualization helpers.
+                        </p>
+                        <div class="flex items-center gap-2 pt-2">
+                            <span class="px-2.5 py-1 rounded-md bg-slate-950 border border-slate-800 text-[11px] font-mono text-emerald-300">Python</span>
+                            <span class="text-[11px] font-mono text-slate-400"><i class="fa-solid fa-code-fork mr-1"></i> 1</span>
+                        </div>
+                    </div>
+                    <div class="pt-5 mt-5 border-t border-slate-800/80 flex items-center justify-between text-xs font-mono">
+                        <a href="https://github.com/monjurmbm404/Python-Data-Science-Tools" target="_blank" class="text-indigo-400 hover:text-indigo-300">View Source &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Repo 2 -->
+                <div class="bg-[#0c101d] border border-slate-800 p-6 rounded-3xl shadow-xl flex flex-col justify-between hover:border-indigo-500/50 transition-all">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between text-xs font-mono text-slate-400">
+                            <span class="flex items-center gap-1.5 text-indigo-400"><i class="fa-solid fa-box-archive"></i> Public Repo</span>
+                            <span class="text-amber-400"><i class="fa-solid fa-star"></i> Pinned</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white hover:text-indigo-300">MingleHeart-client</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Full-stack web client application built with modern JavaScript, interactive components, responsive state flow, and REST APIs.
+                        </p>
+                        <div class="flex items-center gap-2 pt-2">
+                            <span class="px-2.5 py-1 rounded-md bg-slate-950 border border-slate-800 text-[11px] font-mono text-amber-300">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="pt-5 mt-5 border-t border-slate-800/80 flex items-center justify-between text-xs font-mono">
+                        <a href="https://github.com/monjurmbm404/MingleHeart-client" target="_blank" class="text-indigo-400 hover:text-indigo-300">View Source &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Repo 3 -->
+                <div class="bg-[#0c101d] border border-slate-800 p-6 rounded-3xl shadow-xl flex flex-col justify-between hover:border-indigo-500/50 transition-all">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between text-xs font-mono text-slate-400">
+                            <span class="flex items-center gap-1.5 text-indigo-400"><i class="fa-solid fa-box-archive"></i> Public Repo</span>
+                            <span class="text-amber-400"><i class="fa-solid fa-star"></i> Pinned</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white hover:text-indigo-300">Python-Object-Oriented-Programming</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            OOP design patterns, abstraction, inheritance, polymorphism, and modular class systems in Python.
+                        </p>
+                        <div class="flex items-center gap-2 pt-2">
+                            <span class="px-2.5 py-1 rounded-md bg-slate-950 border border-slate-800 text-[11px] font-mono text-emerald-300">Python</span>
+                        </div>
+                    </div>
+                    <div class="pt-5 mt-5 border-t border-slate-800/80 flex items-center justify-between text-xs font-mono">
+                        <a href="https://github.com/monjurmbm404/Python-Object-Oriented-Programming" target="_blank" class="text-indigo-400 hover:text-indigo-300">View Source &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Repo 4 -->
+                <div class="bg-[#0c101d] border border-slate-800 p-6 rounded-3xl shadow-xl flex flex-col justify-between hover:border-indigo-500/50 transition-all">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between text-xs font-mono text-slate-400">
+                            <span class="flex items-center gap-1.5 text-indigo-400"><i class="fa-solid fa-box-archive"></i> Public Repo</span>
+                            <span class="text-amber-400"><i class="fa-solid fa-star"></i> Pinned</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white hover:text-indigo-300">C-Programming-Language</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Low-level C concepts, memory management, pointers, structures, file I/O, and foundational problem solving implementations.
+                        </p>
+                        <div class="flex items-center gap-2 pt-2">
+                            <span class="px-2.5 py-1 rounded-md bg-slate-950 border border-slate-800 text-[11px] font-mono text-blue-300">C</span>
+                        </div>
+                    </div>
+                    <div class="pt-5 mt-5 border-t border-slate-800/80 flex items-center justify-between text-xs font-mono">
+                        <a href="https://github.com/monjurmbm404/C-Programming-Language" target="_blank" class="text-indigo-400 hover:text-indigo-300">View Source &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Repo 5 -->
+                <div class="bg-[#0c101d] border border-slate-800 p-6 rounded-3xl shadow-xl flex flex-col justify-between hover:border-indigo-500/50 transition-all">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between text-xs font-mono text-slate-400">
+                            <span class="flex items-center gap-1.5 text-indigo-400"><i class="fa-solid fa-box-archive"></i> Public Repo</span>
+                            <span class="text-amber-400"><i class="fa-solid fa-star"></i> Pinned</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white hover:text-indigo-300">C-Plus-Plus-Programming-Language</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            C++ Standard Template Library (STL), competitive programming templates, custom data structures, and optimized algorithms.
+                        </p>
+                        <div class="flex items-center gap-2 pt-2">
+                            <span class="px-2.5 py-1 rounded-md bg-slate-950 border border-slate-800 text-[11px] font-mono text-indigo-300">C++</span>
+                        </div>
+                    </div>
+                    <div class="pt-5 mt-5 border-t border-slate-800/80 flex items-center justify-between text-xs font-mono">
+                        <a href="https://github.com/monjurmbm404/C-Plus-Plus-Programming-Language" target="_blank" class="text-indigo-400 hover:text-indigo-300">View Source &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Repo 6 -->
+                <div class="bg-[#0c101d] border border-slate-800 p-6 rounded-3xl shadow-xl flex flex-col justify-between hover:border-indigo-500/50 transition-all">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between text-xs font-mono text-slate-400">
+                            <span class="flex items-center gap-1.5 text-indigo-400"><i class="fa-solid fa-box-archive"></i> Public Repo</span>
+                            <span class="text-amber-400"><i class="fa-solid fa-star"></i> Pinned</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white hover:text-indigo-300">Java-Programming-Language</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Object-oriented Java programs, collection framework utilities, exception handling, and academic CSE project modules.
+                        </p>
+                        <div class="flex items-center gap-2 pt-2">
+                            <span class="px-2.5 py-1 rounded-md bg-slate-950 border border-slate-800 text-[11px] font-mono text-orange-300">Java</span>
+                        </div>
+                    </div>
+                    <div class="pt-5 mt-5 border-t border-slate-800/80 flex items-center justify-between text-xs font-mono">
+                        <a href="https://github.com/monjurmbm404/Java-Programming-Language" target="_blank" class="text-indigo-400 hover:text-indigo-300">View Source &rarr;</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEM SOLVING & COMPETITIVE PROGRAMMING FOCUS SECTION -->
+    <section id="cp" class="py-20 px-4 sm:px-6 lg:px-8 relative bg-[#060913]">
+        <div class="max-w-7xl mx-auto space-y-16">
+            
+            <!-- Section Title -->
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <h2 class="text-xs font-mono text-cyan-400 uppercase tracking-widest">Competitive Programming</h2>
+                <p class="text-2xl sm:text-4xl font-extrabold text-white">Algorithmic Focus & Core Competencies</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-indigo-500 to-cyan-400 mx-auto rounded-full"></div>
+            </div>
+
+            <!-- 1. Algorithmic Foundation & Foundations Roadmaps -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- C & Fundamentals -->
+                <div class="bg-[#0c101d] border border-slate-800 p-6 rounded-3xl space-y-4 hover:border-indigo-500/50 transition-all duration-300">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2.5 rounded-xl bg-indigo-500/10 text-indigo-400">
+                            <i class="fa-solid fa-code text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-base">C & Syntax Fundamentals</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-[11px] font-mono text-slate-300">Variables & Data Types</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-[11px] font-mono text-slate-300">Conditionals & Loops</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-[11px] font-mono text-slate-300">Arrays & Strings</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-[11px] font-mono text-slate-300">Functions & Pointers</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-[11px] font-mono text-slate-300">2D Array & Recursion</span>
+                    </div>
+                </div>
+
+                <!-- C++ for DSA & STL -->
+                <div class="bg-[#0c101d] border border-slate-800 p-6 rounded-3xl space-y-4 hover:border-cyan-500/50 transition-all duration-300">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2.5 rounded-xl bg-cyan-500/10 text-cyan-400">
+                            <i class="fa-solid fa-cubes text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-base">C++ & Standard Template Library</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-[11px] font-mono text-cyan-300">Dynamic Memory</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-[11px] font-mono text-cyan-300">Classes & Objects</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-[11px] font-mono text-cyan-300">Pair, Tuple & Vector</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-[11px] font-mono text-cyan-300">Deque, Map & Set</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-[11px] font-mono text-cyan-300">Multiset & Priority Queue</span>
+                    </div>
+                </div>
+
+                <!-- Data Structures -->
+                <div class="bg-[#0c101d] border border-slate-800 p-6 rounded-3xl space-y-4 hover:border-emerald-500/50 transition-all duration-300">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-400">
+                            <i class="fa-solid fa-sitemap text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-base">Data Structures</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-[11px] font-mono text-emerald-300">Singly & Doubly Linked List</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-[11px] font-mono text-emerald-300">Stack & Queue</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-[11px] font-mono text-emerald-300">Binary Tree & BST</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-[11px] font-mono text-emerald-300">Min/Max Heap</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-[11px] font-mono text-emerald-300">PBDS (Policy-Based DS)</span>
+                    </div>
+                </div>
+
+                <!-- Basic Algorithms -->
+                <div class="bg-[#0c101d] border border-slate-800 p-6 rounded-3xl space-y-4 hover:border-amber-500/50 transition-all duration-300">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2.5 rounded-xl bg-amber-500/10 text-amber-400">
+                            <i class="fa-solid fa-diagram-next text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-base">Classical Algorithms</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-[11px] font-mono text-amber-300">Time Complexity (Big-O)</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-[11px] font-mono text-amber-300">Merge Sort & Divide-and-Conquer</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-[11px] font-mono text-amber-300">Cycle Detection & MST</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-[11px] font-mono text-amber-300">Dijkstra & Bellman-Ford</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-[11px] font-mono text-amber-300">Floyd-Warshall</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 2. Detailed Topic Grid (Sub-topics Breakdown) -->
+            <div class="bg-[#0c101d] border border-slate-800 p-6 sm:p-8 rounded-3xl space-y-8">
+                <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                    <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-layer-group text-cyan-400"></i>
+                        Advanced Competitive Programming Topics
+                    </h3>
+                    <span class="text-xs font-mono text-slate-400">Topic-Wise Breakdown</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Array Techniques & Binary Search -->
+                    <div class="space-y-3">
+                        <h4 class="text-xs font-mono uppercase tracking-wider text-indigo-400 font-semibold">1. Array & Binary Search</h4>
+                        <ul class="space-y-2 text-xs font-mono text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-indigo-400"></i> Fixed & Variable Size Sliding Window</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-indigo-400"></i> Difference Array & 2D Prefix Sum</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-indigo-400"></i> Lower & Upper Bound (Closest Left/Right)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-indigo-400"></i> Monotonic Function & Binary Search on Answer</li>
+                        </ul>
+                    </div>
+
+                    <!-- Mathematics & Number Theory -->
+                    <div class="space-y-3">
+                        <h4 class="text-xs font-mono uppercase tracking-wider text-cyan-400 font-semibold">2. Mathematics & Number Theory</h4>
+                        <ul class="space-y-2 text-xs font-mono text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-cyan-400"></i> Bit Manipulation & Bitmasking</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-cyan-400"></i> Sieve of Eratosthenes & SPF</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-cyan-400"></i> GCD, LCM & Modular Arithmetic</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-cyan-400"></i> Binary Exponentiation & Fermat's Theorem</li>
+                        </ul>
+                    </div>
+
+                    <!-- Trees & Graphs -->
+                    <div class="space-y-3">
+                        <h4 class="text-xs font-mono uppercase tracking-wider text-emerald-400 font-semibold">3. Trees & Graph Algorithms</h4>
+                        <ul class="space-y-2 text-xs font-mono text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-emerald-400"></i> BFS & DFS Traversals</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-emerald-400"></i> DSU (Union by Rank/Size & Path Compression)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-emerald-400"></i> Segment Tree (Single Update & Range Query)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-emerald-400"></i> Segment Tree Lazy Propagation</li>
+                        </ul>
+                    </div>
+
+                    <!-- Recursion & Dynamic Programming -->
+                    <div class="space-y-3">
+                        <h4 class="text-xs font-mono uppercase tracking-wider text-amber-400 font-semibold">4. Recursion & Dynamic Programming</h4>
+                        <ul class="space-y-2 text-xs font-mono text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-amber-400"></i> Recursive Trees & Backtracking</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-amber-400"></i> 0-1 Knapsack & Variations</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-amber-400"></i> Longest Common Subsequence (LCS)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-amber-400"></i> Longest Increasing Subsequence (LIS)</li>
+                        </ul>
+                    </div>
+
+                    <!-- String Algorithms -->
+                    <div class="space-y-3">
+                        <h4 class="text-xs font-mono uppercase tracking-wider text-rose-400 font-semibold">5. String Hashing & Algorithms</h4>
+                        <ul class="space-y-2 text-xs font-mono text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-rose-400"></i> Single & Double String Hashing</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-rose-400"></i> Substring Polynomial Hashing</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-rose-400"></i> String Matching Techniques</li>
+                        </ul>
+                    </div>
+
+                    <!-- Combinatorics & Advanced Math -->
+                    <div class="space-y-3">
+                        <h4 class="text-xs font-mono uppercase tracking-wider text-purple-400 font-semibold">6. Combinatorics & Counting</h4>
+                        <ul class="space-y-2 text-xs font-mono text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-purple-400"></i> Permutations & Combinations ($nCr, nPr$)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-purple-400"></i> Inverse Modular Arithmetic</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-purple-400"></i> Pigeonhole Principle, Stars & Bars</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- AI/ML LEARNING JOURNEY -->
+    <section id="aiml" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/40 border-y border-slate-800/80">
+        <div class="max-w-7xl mx-auto space-y-16">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <h2 class="text-xs font-mono text-indigo-400 uppercase tracking-widest">Intelligent Systems & Research</h2>
+                <p class="text-2xl sm:text-4xl font-extrabold text-white">AI / ML Engineering & Research Journey</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-indigo-500 to-cyan-400 mx-auto rounded-full"></div>
+                <p class="text-xs text-slate-400 max-w-xl mx-auto pt-2">
+                    Building robust expertise from core mathematics and data foundations to production-grade AI systems, LLM architectures, and academic research.
+                </p>
+            </div>
+
+            <!-- Core Foundations Phase -->
+            <div class="space-y-6">
+                <div class="flex items-center gap-3 border-b border-slate-800 pb-3">
+                    <span class="px-3 py-1 rounded-xl bg-indigo-500/10 text-indigo-400 text-xs font-mono font-bold">CORE FOUNDATIONS</span>
+                    <h3 class="text-white font-bold text-base sm:text-lg">Essentials & Core Frameworks</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Python Engineering -->
+                    <div class="bg-[#0c101d] border border-slate-800 p-6 rounded-3xl space-y-3 hover:border-indigo-500/50 transition-all duration-300">
+                        <div class="text-indigo-400 text-xs font-mono uppercase">Python Engineering</div>
+                        <h4 class="font-bold text-white text-sm">Python & Data Stack</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Core syntax, OOP, exception handling, Streamlit web apps, NumPy matrix operations, Pandas, and data visualization.</p>
+                    </div>
+                    <!-- Applied Mathematics -->
+                    <div class="bg-[#0c101d] border border-slate-800 p-6 rounded-3xl space-y-3 hover:border-cyan-500/50 transition-all duration-300">
+                        <div class="text-cyan-400 text-xs font-mono uppercase">Applied Mathematics</div>
+                        <h4 class="font-bold text-white text-sm">Math, ML & Feature Eng</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Linear algebra, probability, calculus, EDA, missing value imputation, feature scaling, regression, and tree models.</p>
+                    </div>
+                    <!-- Neural Networks -->
+                    <div class="bg-[#0c101d] border border-slate-800 p-6 rounded-3xl space-y-3 hover:border-emerald-500/50 transition-all duration-300">
+                        <div class="text-emerald-400 text-xs font-mono uppercase">Neural Networks</div>
+                        <h4 class="font-bold text-white text-sm">Deep Learning Fundamentals</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Perceptrons, multi-layer perceptrons, forward and backward propagation dynamics, activation functions, and PyTorch.</p>
+                    </div>
+                    <!-- Advanced Architectures -->
+                    <div class="bg-[#0c101d] border border-slate-800 p-6 rounded-3xl space-y-3 hover:border-amber-500/50 transition-all duration-300">
+                        <div class="text-amber-400 text-xs font-mono uppercase">Advanced Architectures</div>
+                        <h4 class="font-bold text-white text-sm">Computer Vision & NLP</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Convolutional Neural Networks (CNNs), recurrent sequence modeling, text preprocessing pipelines, and word embeddings.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Specialization Tracks -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 pt-4">
+                
+                <!-- Production AI Engineering -->
+                <div class="bg-[#0c101d] border border-slate-800 p-8 rounded-3xl space-y-6 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 rounded-full blur-2xl pointer-events-none"></div>
+                    <div class="flex items-center justify-between">
+                        <span class="px-3 py-1 rounded-xl bg-cyan-500/10 text-cyan-400 text-xs font-mono font-bold">SPECIALIZATION</span>
+                        <span class="text-xs font-mono text-slate-400">Production AI Systems</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">AI Engineering & Deployment</h3>
+                        <p class="text-xs text-slate-400 mt-1">Building scalable GenAI applications, APIs, vector databases, and multi-agent workflows.</p>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="p-3 rounded-2xl bg-slate-950 border border-slate-800 flex items-start gap-3">
+                            <i class="fa-solid fa-server text-cyan-400 mt-1"></i>
+                            <div>
+                                <span class="text-xs font-bold text-white block">Backend & FastAPI Microservices</span>
+                                <span class="text-[11px] text-slate-400">RESTful architecture, Pydantic data validation, SQLAlchemy, and containerization.</span>
+                            </div>
+                        </div>
+                        <div class="p-3 rounded-2xl bg-slate-950 border border-slate-800 flex items-start gap-3">
+                            <i class="fa-solid fa-brain text-indigo-400 mt-1"></i>
+                            <div>
+                                <span class="text-xs font-bold text-white block">LLM Foundations & Prompt Engineering</span>
+                                <span class="text-[11px] text-slate-400">Transformer intuition, Gemini/OpenAI SDK integrations, function calling, and structured outputs.</span>
+                            </div>
+                        </div>
+                        <div class="p-3 rounded-2xl bg-slate-950 border border-slate-800 flex items-start gap-3">
+                            <i class="fa-solid fa-database text-emerald-400 mt-1"></i>
+                            <div>
+                                <span class="text-xs font-bold text-white block">LangChain & Vector Databases</span>
+                                <span class="text-[11px] text-slate-400">LCEL architectures, conversational session memory, ChromaDB, FAISS, and MongoDB integration.</span>
+                            </div>
+                        </div>
+                        <div class="p-3 rounded-2xl bg-slate-950 border border-slate-800 flex items-start gap-3">
+                            <i class="fa-solid fa-network-wired text-amber-400 mt-1"></i>
+                            <div>
+                                <span class="text-xs font-bold text-white block">Advanced RAG & Agentic Workflows</span>
+                                <span class="text-[11px] text-slate-400">Hybrid search, re-ranking algorithms, autonomous agent loops with LangGraph, and MCP orchestration.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Academic Research & Thesis -->
+                <div class="bg-[#0c101d] border border-slate-800 p-8 rounded-3xl space-y-6 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-purple-500/5 rounded-full blur-2xl pointer-events-none"></div>
+                    <div class="flex items-center justify-between">
+                        <span class="px-3 py-1 rounded-xl bg-purple-500/10 text-purple-400 text-xs font-mono font-bold">SPECIALIZATION</span>
+                        <span class="text-xs font-mono text-slate-400">Academic & Research</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">Research & Publication Track</h3>
+                        <p class="text-xs text-slate-400 mt-1">Systematic methodology for scholarly research, experimentation, and paper publication.</p>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="p-3 rounded-2xl bg-slate-950 border border-slate-800 flex items-start gap-3">
+                            <i class="fa-solid fa-magnifying-glass text-purple-400 mt-1"></i>
+                            <div>
+                                <span class="text-xs font-bold text-white block">Problem Formulation & Literature Review</span>
+                                <span class="text-[11px] text-slate-400">Defining research scopes using the FINER framework, structured literature review, and gap analysis.</span>
+                            </div>
+                        </div>
+                        <div class="p-3 rounded-2xl bg-slate-950 border border-slate-800 flex items-start gap-3">
+                            <i class="fa-solid fa-file-lines text-blue-400 mt-1"></i>
+                            <div>
+                                <span class="text-xs font-bold text-white block">Proposal & Methodology Design</span>
+                                <span class="text-[11px] text-slate-400">LaTeX/Overleaf proposal drafting, data management frameworks, and baseline setup.</span>
+                            </div>
+                        </div>
+                        <div class="p-3 rounded-2xl bg-slate-950 border border-slate-800 flex items-start gap-3">
+                            <i class="fa-solid fa-flask text-emerald-400 mt-1"></i>
+                            <div>
+                                <span class="text-xs font-bold text-white block">Experimentation & Implementation</span>
+                                <span class="text-[11px] text-slate-400">Executing research codebases, tracking systematic logs, and conducting ablation studies.</span>
+                            </div>
+                        </div>
+                        <div class="p-3 rounded-2xl bg-slate-950 border border-slate-800 flex items-start gap-3">
+                            <i class="fa-solid fa-award text-rose-400 mt-1"></i>
+                            <div>
+                                <span class="text-xs font-bold text-white block">Thesis Writing & Defense Preparation</span>
+                                <span class="text-[11px] text-slate-400">Drafting thesis chapters, targeting peer-reviewed journals, and mock defense preparation.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ALL PROFILES SECTION -->
+        <section id="profiles" class="py-20 px-4 sm:px-6 lg:px-8 relative">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                    <h2 class="text-xs font-mono text-cyan-400 uppercase tracking-widest">Connect Everywhere</h2>
+                    <p class="text-2xl sm:text-4xl font-extrabold text-white">Online Profiles Matrix</p>
+                    <div class="w-16 h-1 bg-gradient-to-r from-indigo-500 to-cyan-400 mx-auto rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    
+                    <!-- 1. GitHub -->
+                    <a href="https://github.com/monjurmbm40" target="_blank" rel="noopener noreferrer" class="bg-[#0c101d] border border-slate-800 p-5 rounded-2xl hover:border-indigo-500/50 hover:bg-slate-900 transition-all flex items-center justify-between group">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-brands fa-github text-2xl text-slate-300 group-hover:text-indigo-400"></i>
+                            <div>
+                                <h3 class="font-bold text-white text-sm">GitHub</h3>
+                                <span class="text-xs text-slate-400 font-mono">@monjurmbm40</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-white"></i>
+                    </a>
+
+                    <!-- 2. Codeforces -->
+                    <a href="https://codeforces.com/profile/monjurmbm404" target="_blank" rel="noopener noreferrer" class="bg-[#0c101d] border border-slate-800 p-5 rounded-2xl hover:border-blue-500/50 hover:bg-slate-900 transition-all flex items-center justify-between group">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-code text-2xl text-blue-400"></i>
+                            <div>
+                                <h3 class="font-bold text-white text-sm">Codeforces</h3>
+                                <span class="text-xs text-slate-400 font-mono">@monjurmbm404</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-white"></i>
+                    </a>
+
+                    <!-- 3. CodeChef -->
+                    <a href="https://www.codechef.com/users/monjurmbm404" target="_blank" rel="noopener noreferrer" class="bg-[#0c101d] border border-slate-800 p-5 rounded-2xl hover:border-amber-500/50 hover:bg-slate-900 transition-all flex items-center justify-between group">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-utensils text-2xl text-amber-400"></i>
+                            <div>
+                                <h3 class="font-bold text-white text-sm">CodeChef</h3>
+                                <span class="text-xs text-slate-400 font-mono">@monjurmbm404</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-white"></i>
+                    </a>
+
+                    <!-- 4. LeetCode -->
+                    <a href="https://leetcode.com/u/monjurmbm404/" target="_blank" rel="noopener noreferrer" class="bg-[#0c101d] border border-slate-800 p-5 rounded-2xl hover:border-orange-500/50 hover:bg-slate-900 transition-all flex items-center justify-between group">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-terminal text-2xl text-orange-400"></i>
+                            <div>
+                                <h3 class="font-bold text-white text-sm">LeetCode</h3>
+                                <span class="text-xs text-slate-400 font-mono">@monjurmbm404</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-white"></i>
+                    </a>
+
+                    <!-- 5. LinkedIn -->
+                    <a href="https://www.linkedin.com/in/monjurmbm404/" target="_blank" rel="noopener noreferrer" class="bg-[#0c101d] border border-slate-800 p-5 rounded-2xl hover:border-sky-500/50 hover:bg-slate-900 transition-all flex items-center justify-between group">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-brands fa-linkedin text-2xl text-sky-400"></i>
+                            <div>
+                                <h3 class="font-bold text-white text-sm">LinkedIn</h3>
+                                <span class="text-xs text-slate-400 font-mono">in/monjurmbm404</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-white"></i>
+                    </a>
+
+                    <!-- 6. Facebook -->
+                    <a href="https://www.facebook.com/monjurmbm404" target="_blank" rel="noopener noreferrer" class="bg-[#0c101d] border border-slate-800 p-5 rounded-2xl hover:border-blue-600/50 hover:bg-slate-900 transition-all flex items-center justify-between group">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-brands fa-facebook text-2xl text-blue-500"></i>
+                            <div>
+                                <h3 class="font-bold text-white text-sm">Facebook</h3>
+                                <span class="text-xs text-slate-400 font-mono">@monjurmbm404</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-white"></i>
+                    </a>
+
+                    <!-- 7. vjudge -->
+                    <a href="https://vjudge.net/user/monjurmbm404" target="_blank" rel="noopener noreferrer" class="bg-[#0c101d] border border-slate-800 p-5 rounded-2xl hover:border-emerald-500/50 hover:bg-slate-900 transition-all flex items-center justify-between group">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-v text-2xl text-emerald-400"></i>
+                            <div>
+                                <h3 class="font-bold text-white text-sm">vjudge</h3>
+                                <span class="text-xs text-slate-400 font-mono">@monjurmbm404</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-white"></i>
+                    </a>
+
+                    <!-- 8. YouTube -->
+                    <a href="https://youtube.com/@monjurmbm404" target="_blank" rel="noopener noreferrer" class="bg-[#0c101d] border border-slate-800 p-5 rounded-2xl hover:border-rose-500/50 hover:bg-slate-900 transition-all flex items-center justify-between group">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-brands fa-youtube text-2xl text-rose-500"></i>
+                            <div>
+                                <h3 class="font-bold text-white text-sm">YouTube</h3>
+                                <span class="text-xs text-slate-400 font-mono">@monjurmbm404</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-white"></i>
+                    </a>
+
+                    <!-- 9. Medium -->
+                    <a href="https://medium.com/@monjurmbm404" target="_blank" rel="noopener noreferrer" class="bg-[#0c101d] border border-slate-800 p-5 rounded-2xl hover:border-slate-400/50 hover:bg-slate-900 transition-all flex items-center justify-between group">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-brands fa-medium text-2xl text-slate-200"></i>
+                            <div>
+                                <h3 class="font-bold text-white text-sm">Medium</h3>
+                                <span class="text-xs text-slate-400 font-mono">@monjurmbm404</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-white"></i>
+                    </a>
+
+                    <!-- 10. X (Twitter) -->
+                    <a href="https://x.com/monjurmbm404" target="_blank" rel="noopener noreferrer" class="bg-[#0c101d] border border-slate-800 p-5 rounded-2xl hover:border-slate-400/50 hover:bg-slate-900 transition-all flex items-center justify-between group">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-brands fa-x-twitter text-2xl text-slate-200"></i>
+                            <div>
+                                <h3 class="font-bold text-white text-sm">X (Twitter)</h3>
+                                <span class="text-xs text-slate-400 font-mono">@monjurmbm404</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-white"></i>
+                    </a>
+
+                    <!-- 11. E-mail -->
+                    <a href="mailto:monjurmbm404@gmail.com" class="bg-[#0c101d] border border-slate-800 p-5 rounded-2xl hover:border-teal-500/50 hover:bg-slate-900 transition-all flex items-center justify-between group sm:col-span-2 lg:col-span-1">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-2xl text-teal-400"></i>
+                            <div>
+                                <h3 class="font-bold text-white text-sm">E-mail</h3>
+                                <span class="text-xs text-slate-400 font-mono">monjurmbm404@gmail.com</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-paper-plane text-xs text-slate-500 group-hover:text-white"></i>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/40 border-t border-slate-800/80">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <h2 class="text-xs font-mono text-indigo-400 uppercase tracking-widest">Get In Touch</h2>
+                <p class="text-2xl sm:text-4xl font-extrabold text-white">Let's Work Together</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-indigo-500 to-cyan-400 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="max-w-xl mx-auto bg-[#0c101d] border border-slate-800 p-8 rounded-3xl space-y-6 text-center">
+                <div class="w-16 h-16 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center text-2xl mx-auto">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-white">Direct Email Inquiry</h3>
+                    <p class="text-xs text-slate-400 font-mono mt-1">monjurmbm404@gmail.com</p>
+                </div>
+                <div class="flex items-center justify-center gap-3">
+                    <button id="copy-email-btn" class="px-5 py-2.5 rounded-xl bg-indigo-600 text-white font-mono text-xs font-semibold hover:bg-indigo-500 transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-copy"></i>
+                        <span id="copy-btn-text">Copy Email</span>
+                    </button>
+                    <a href="mailto:monjurmbm404@gmail.com" class="px-5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 font-mono text-xs font-semibold hover:bg-slate-800 transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>Send Email</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer class="py-12 bg-[#05070f] border-t border-slate-800/80 text-xs font-mono text-slate-400 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <!-- Brand & Tagline -->
+                <div class="flex flex-col items-center md:items-start space-y-2 text-center md:text-left">
+                    <a href="#home" class="flex items-center gap-2 group">
+                        <span class="font-bold text-slate-100 text-base tracking-tight group-hover:text-indigo-400 transition-colors">
+                            Engr. Md Monjur Bakth Mazumder
+                        </span>
+                    </a>
+                    <p class="text-slate-500 text-xs">
+                        Building scalable applications & solving complex problems daily.
+                    </p>
+                </div>
+
+                <!-- Social Links -->
+                <div class="flex items-center gap-4 text-base">
+                    <a href="https://github.com/monjurmbm404" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-indigo-400 hover:border-indigo-500/50 flex items-center justify-center transition-all" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="mailto:monjurmbm404@gmail.com" class="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/50 flex items-center justify-center transition-all" aria-label="Email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-6 border-t border-slate-800/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+                <p>&copy; <span id="current-year"></span> Engr. Md Monjur Bakth Mazumder. All rights reserved.</p>
+                
+                <!-- Back to Top Button -->
+                <a href="#home" class="inline-flex items-center gap-2 text-slate-400 hover:text-indigo-400 transition-colors">
+                    <span>Back to top</span>
+                    <i class="fa-solid fa-arrow-up text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dynamic Typing Animation
+        const roles = [
+            "Frontend-Focused Full Stack Developer",
+            "Competitive Programmer",
+            "AI/ML Learner & Enthusiast",
+            "Software Engineering Scholar"
+        ];
+        let roleIdx = 0;
+        let charIdx = 0;
+        let isDeleting = false;
+        const typedTextEl = document.getElementById('typed-text');
+
+        function typeEffect() {
+            const currentRole = roles[roleIdx];
+            if (isDeleting) {
+                typedTextEl.textContent = currentRole.substring(0, charIdx - 1);
+                charIdx--;
+            } else {
+                typedTextEl.textContent = currentRole.substring(0, charIdx + 1);
+                charIdx++;
+            }
+
+            let typeSpeed = isDeleting ? 40 : 80;
+
+            if (!isDeleting && charIdx === currentRole.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIdx === 0) {
+                isDeleting = false;
+                roleIdx = (roleIdx + 1) % roles.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(typeEffect, typeSpeed);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            typeEffect();
+
+            // Mobile menu toggle
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Copy Email Interactive Script
+            const copyBtn = document.getElementById('copy-email-btn');
+            const copyBtnText = document.getElementById('copy-btn-text');
+
+            if (copyBtn) {
+                copyBtn.addEventListener('click', () => {
+                    const email = 'monjurmbm404@gmail.com';
+                    navigator.clipboard.writeText(email).then(() => {
+                        copyBtnText.textContent = 'Copied!';
+                        copyBtn.classList.remove('bg-indigo-600', 'hover:bg-indigo-500');
+                        copyBtn.classList.add('bg-emerald-600');
+                        
+                        setTimeout(() => {
+                            copyBtnText.textContent = 'Copy Email';
+                            copyBtn.classList.remove('bg-emerald-600');
+                            copyBtn.classList.add('bg-indigo-600', 'hover:bg-indigo-500');
+                        }, 2000);
+                    });
+                });
+            }
+        });
+
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    </script>
+</body>
+</html>
