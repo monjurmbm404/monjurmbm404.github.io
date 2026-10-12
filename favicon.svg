@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <!-- Gradient Border matching logo colors -->
+    <linearGradient id="mbm-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="50%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+  </defs>
+
+  <!-- Outer Rounded Square with Gradient Border -->
+  <rect x="5" y="5" width="90" height="90" rx="26" fill="#070a12" stroke="url(#mbm-gradient)" stroke-width="6" />
+
+  <!-- Centered MBM Text -->
+  <text x="50%" y="54%" dominant-baseline="central" text-anchor="middle" font-family="'Fira Code', 'Inter', monospace, sans-serif" font-size="32" font-weight="800" fill="#818cf8" letter-spacing="1">MBM</text>
+</svg>
